@@ -20,17 +20,25 @@
  ******************************************************************************************/
 #pragma once
 
+#include "Rectangle.h"
+#include "Square.h"
+
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "Graphics.h"
+
+using namespace std;
+
 
 class Game
 {
 public:
 	Game( class MainWindow& wnd );
 	Game( const Game& ) = delete;
+	~Game();
 	Game& operator=( const Game& ) = delete;
 	void Go();
+	
 private:
 	void ComposeFrame();
 	void UpdateModel();
@@ -43,4 +51,6 @@ private:
 	/********************************/
 	/*  User Variables              */
 	/********************************/
+	Fighter* left_fighter;
+	Fighter* right_fighter;
 };
